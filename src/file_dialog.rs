@@ -1193,7 +1193,7 @@ impl FileDialog {
 
                 ui.painter().rect_filled(
                     screen_rect,
-                    egui::CornerRadius::ZERO,
+                    egui::Rounding::ZERO,
                     self.config.modal_overlay_color,
                 );
             })
@@ -1376,8 +1376,8 @@ impl FileDialog {
                 1.0,
                 ui.ctx().style().visuals.window_stroke.color,
             ))
-            .inner_margin(egui::Margin::from(4))
-            .corner_radius(egui::CornerRadius::from(4))
+            .inner_margin(egui::Margin::from(4.0))
+            .rounding(egui::Rounding::from(4.0))
             .show(ui, |ui| {
                 const EDIT_BUTTON_SIZE: egui::Vec2 = egui::Vec2::new(22.0, 20.0);
 
@@ -1549,8 +1549,8 @@ impl FileDialog {
                 1.0,
                 ui.ctx().style().visuals.window_stroke.color,
             ))
-            .inner_margin(egui::Margin::symmetric(4, 4))
-            .corner_radius(egui::CornerRadius::from(4))
+            .inner_margin(egui::Margin::symmetric(4.0, 4.0))
+            .rounding(egui::Rounding::from(4.0))
             .show(ui, |ui| {
                 ui.with_layout(egui::Layout::left_to_right(egui::Align::Min), |ui| {
                     ui.add_space(ui.ctx().style().spacing.item_spacing.y);
@@ -1914,7 +1914,7 @@ impl FileDialog {
                 DialogMode::SaveFile => {
                     let mut output = egui::TextEdit::singleline(&mut self.file_name_input)
                         .cursor_at_end(false)
-                        .margin(egui::Margin::symmetric(4, 3))
+                        .margin(egui::Margin::symmetric(4.0, 3.0))
                         .desired_width(scroll_bar_width - item_spacing.x)
                         .show(ui);
 
