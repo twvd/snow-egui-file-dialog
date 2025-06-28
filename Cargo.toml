@@ -8,8 +8,7 @@ repository = "https://github.com/fluxxcode/egui-file-dialog"
 homepage = "https://github.com/fluxxcode/egui-file-dialog"
 readme = "README.md"
 license = "MIT"
-exclude = ["media/", ".github/"]
-include = ["media/readme/"]
+exclude = [".github/", "media/examples/", "media/changelog"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
